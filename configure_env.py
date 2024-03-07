@@ -5,7 +5,7 @@ comandos = [
     ".\\env\\Scripts\\activate",
     "python -m pip install -r FIFAclone/requirements.txt",
     "npm install",
-    "python manage.py collectstatic"
+    "python .\FIFAclone\manage.py collectstatic"
 ]
 
 for comando in comandos:
