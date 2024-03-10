@@ -3,11 +3,10 @@ from django.contrib.auth import login
 from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.shortcuts import redirect
-from django.contrib.auth.decorators import login_required
 from base.forms import CustomUserCreationForm
 from django.contrib.auth import logout
 
-@login_required
+
 def index(request):
     return render(request, 'index.html',{
 
