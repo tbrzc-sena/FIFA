@@ -1,0 +1,24 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}">
+    <title>FIFA | La casa del fútbol </title>
+</head>
+
+<body>
+        <div class="w-50 ">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-primary">registrarse</button>
+            </form>
+            <a href="{% url 'login_view' %}">login</a>
+        </div>
+    <script src="https://kit.fontawesome.com/365036b8b3.js" crossorigin="anonymous"></script>
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>
