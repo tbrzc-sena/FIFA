@@ -11,7 +11,7 @@
 <body>
     <div class="d-flex">
         <div class="w-50">
-            <img src="/assets/imgs/fifa-stock.webp" alt="" srcset="" class="w-100">
+            <img src="/static/imgs/fifa-stock.webp" alt="" srcset="" class="w-100">
         </div>
         <div class="w-50 ">
             <h1>{{ user.username}}</h1>
@@ -20,6 +20,7 @@
 
                 {% if user.is_authenticated %}
                 <a href="{% url 'logout' %}">salir</a>
+                <a href="{% url 'dashboard_view' %}">dashboard</a>
                 {% else %}
                 <div class="mb-3">
                     <label for="login_email"></label>

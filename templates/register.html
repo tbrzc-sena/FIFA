@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>FIFA | La casa del fútbol </title>
 </head>
 
 <body>
-        <div class="w-50 ">
-            <form action="" method="post">
+        <div class="w-50 form__container">
+            <form action="" method="post" class="form logout">
                 {% csrf_token %}
                 {{ form }}
                 <button type="submit" class="btn btn-primary">registrarse</button>

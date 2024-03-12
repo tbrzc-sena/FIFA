@@ -2,11 +2,13 @@
 
 {% block content %}
 
-<h1>añadir producto</h1>
+<h1>añadir judador</h1>
+<div class="">
+    <form action="/dashboard/newplayer" method="post" class="form">
+        {% csrf_token %}
+            {{form}}
+            <button class="form__button">guardar</button>
+        </form>
+</div>
 
-<form action="/dashboard/newplayer" method="post">
-{% csrf_token %}
-    {{form}}
-    <button>guardar</button>
-</form>
 {% endblock %}
