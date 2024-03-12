@@ -10,11 +10,13 @@
 </head>
 
 <body>
-    <h1>bienvenido {{user.username}}</h1>
-    <a href="{% url 'admin:index' %}">admin</a>
-    <a href="{% url 'login_view' %}">atras</a>
+    <h1>Bienvenido {{user.username}}</h1>
+    <div>
+        <a href="{% url 'admin:index' %}">admin</a>
+        <a href="{% url 'login_view' %}">atras</a>
+    </div>
+    
     {% include 'nav_bar.html' %}
-
     {% block content %}
     {% endblock %}
 

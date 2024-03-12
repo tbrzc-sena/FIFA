@@ -16,6 +16,10 @@
 .logout{
 
 }
+.newplayer_div{
+  display: flex;
+  align-items: center;
+}
 body {
   display: flex;
   flex-direction: column;
