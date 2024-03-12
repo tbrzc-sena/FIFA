@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from base.forms import CustomUserCreationForm
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -20,7 +21,7 @@ def login_view(request):
         if user:
             login(request, user)
             messages.success(request, 'Bienvenido {}'.format(user.username))
-            return redirect('admin:index')
+            return redirect('dashboard_view')
         else:
             messages.error(request, 'Usuario o contraseña incorrectos')
 
@@ -50,3 +51,9 @@ def logout_view(request):
     logout(request)
     messages.success(request, 'Sesión finalizada')
     return redirect('login_view')
+
+@login_required(login_url='/login/')
+def dashboard_view(request):
+    return render(request, 'dashboard.html',{
+
+    })

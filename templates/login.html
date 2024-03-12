@@ -17,6 +17,10 @@
             <h1>{{ user.username}}</h1>
             <form action="" method="post">
                 {% csrf_token %}
+
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">salir</a>
+                {% else %}
                 <div class="mb-3">
                     <label for="login_email"></label>
                     <input type="text" id="login_email" class="form-control" name="username">
@@ -25,9 +29,6 @@
                     <label for="login_password"></label>
                     <input type="password" id="login_password" class="form-control" name="password">
                 </div>
-                {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}">salir</a>
-                {% else %}
                 <button type="submit" class="btn btn-primary">Iniciar sesion</button>
                 {% endif %}
             </form>
