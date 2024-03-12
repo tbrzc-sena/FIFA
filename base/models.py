@@ -77,7 +77,7 @@ class Tecnico(models.Model):
 
 
     def __str__(self):
-        return self.nombre_jugador
+        return self.nombre_tecnico
 
     class Meta:
         verbose_name = "Tecnico"

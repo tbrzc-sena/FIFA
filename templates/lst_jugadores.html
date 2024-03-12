@@ -1,0 +1,38 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+<h1>Judadores</h1>
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Fecha Nacimiento</th>
+            <th scope="col">posicion</th>
+            <th scope="col">Equipo</th>
+            <th scope="col">Numero camiseta</th>
+            <th scope="col">Titular?</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%  for jugador in jugadores %}
+          <tr>
+            <td>{{jugador.id_jugador}}</td>
+            <td>{{jugador.nombre_jugador}}</td>
+            <td>{{jugador.apellido_jugador}}</td>
+            <td><img src="{{jugador.foto}}" style="max-width: 70px;" alt="" srcset=""></td>
+            <td>{{jugador.fecha_nacimiento}}</td>
+            <td>{{jugador.posicion}}</td>
+            <td>{{jugador.equipo}}</td>
+            <td>{{jugador.numero_camiseta}}</td>
+            <td>{{jugador.titular}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

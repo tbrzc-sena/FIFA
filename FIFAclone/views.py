@@ -7,6 +7,8 @@ from base.forms import CustomUserCreationForm
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from base.forms import JudadorForm
+from base import models
+
 
 def index(request):
     return render(request, 'index.html',{
@@ -58,16 +60,6 @@ def dashboard_view(request):
 
     })
 
-
-def new_player_view(request):
-    if request.method == "GET":
-        return render(request, 'new_jugador.html', {"form": JudadorForm})
-    else:
-        try:
-            form = JudadorForm(request.POST)
-            new_task = form.save(commit=False)
-            new_task.user = request.user
-            new_task.save()
-            return redirect('tasks')
-        except ValueError:
-            return render(request, 'new_jugador.html', {"form": JudadorForm, "error": "Error creating task."})
+def lst_jugadores_view(request):
+    jugadores = models.Jugador.objects.all()
+    return render(request, 'lst_jugadores.html', {"jugadores": jugadores})  

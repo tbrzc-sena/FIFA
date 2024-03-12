@@ -26,5 +26,5 @@ urlpatterns = [
     path('register/',views.register_view, name='register_view'),
     path('logout/', views.logout_view, name='logout'),
     path('dashboard/', views.dashboard_view, name='dashboard_view'),
-    path('dashboard/newplayer/', views.new_player_view, name='new_player_view')
+    path('dashboard/lstjugadores/', views.lst_jugadores_view, name='lst_jugadores_view')
 ]
