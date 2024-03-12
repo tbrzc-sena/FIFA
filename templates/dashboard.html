@@ -9,8 +9,13 @@
 </head>
 
 <body>
+    <h1>bienvenido {{user.username}}</h1>
     <a href="{% url 'admin:index' %}">admin</a>
     <a href="{% url 'login_view' %}">atras</a>
+    {% include 'nav_bar.html' %}
+
+    {% block content %}
+    {% endblock %}
 
     <script src="https://kit.fontawesome.com/365036b8b3.js" crossorigin="anonymous"></script>
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>

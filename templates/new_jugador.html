@@ -1,0 +1,12 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+<h1>añadir producto</h1>
+
+<form action="/dashboard/newplayer" method="post">
+{% csrf_token %}
+    {{form}}
+    <button>guardar</button>
+</form>
+{% endblock %}

@@ -6,7 +6,7 @@ from django.shortcuts import redirect
 from base.forms import CustomUserCreationForm
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-
+from base.forms import JudadorForm
 
 def index(request):
     return render(request, 'index.html',{
@@ -57,3 +57,17 @@ def dashboard_view(request):
     return render(request, 'dashboard.html',{
 
     })
+
+
+def new_player_view(request):
+    if request.method == "GET":
+        return render(request, 'new_jugador.html', {"form": JudadorForm})
+    else:
+        try:
+            form = JudadorForm(request.POST)
+            new_task = form.save(commit=False)
+            new_task.user = request.user
+            new_task.save()
+            return redirect('tasks')
+        except ValueError:
+            return render(request, 'new_jugador.html', {"form": JudadorForm, "error": "Error creating task."})
