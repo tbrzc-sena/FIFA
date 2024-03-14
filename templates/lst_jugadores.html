@@ -1,11 +1,9 @@
-{% extends 'dashboard.html' %}
 
-{% block content %}
-
-<h1>Judadores</h1>
-<div>
-    <table class="table">
-        <thead>
+<div style="margin: 7%;">
+  <h2>Judadores</h2>
+  <a href="#" class="btn btn-success">Añadir</a>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
@@ -16,6 +14,8 @@
             <th scope="col">Equipo</th>
             <th scope="col">Numero camiseta</th>
             <th scope="col">Titular?</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -30,9 +30,11 @@
             <td>{{jugador.equipo}}</td>
             <td>{{jugador.numero_camiseta}}</td>
             <td>{{jugador.titular}}</td>
+            <td><a href="#" class="btn btn-warning">Editar</a></td>
+            <td><a href="#" class="btn btn-danger">Eliminar</a></td>
+            <td><a href="#" class="btn btn-primary">Detalle</a></td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
 </div>
-{% endblock %}
