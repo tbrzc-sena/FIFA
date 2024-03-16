@@ -14,7 +14,9 @@
         <h1 class="text-white">Bienvenido {{user.username}}</h1>
         <div>
             <a href="{% url 'lst_jugadores_view' %}" class="btn btn-primary">Lista de jugadores</a>
+
             <a href="{% url 'admin:index' %}" class="btn btn-primary">Admin</a>
+            <a href="{% url 'logout' %}" class="btn btn-primary">Salir</a>
         </div>
     </nav>
     {% block content %}
