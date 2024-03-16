@@ -34,12 +34,12 @@ class Posicion(models.Model):
 class Jugador(models.Model):
     id_jugador = models.AutoField(primary_key=True)
     nombre_jugador = models.CharField(max_length=50, verbose_name="Nombre jugador")
-    apellido_jugador = models.TextField(max_length=50,verbose_name="Apellido jugador")
+    apellido_jugador = models.CharField(max_length=50,verbose_name="Apellido jugador")
     foto = models.TextField(unique=True,verbose_name="Foto jugador")
     fecha_nacimiento = models.DateField(verbose_name="Fecha de nacimiento")
     posicion = models.ForeignKey(Posicion, on_delete=models.CASCADE, verbose_name="Posicion")
     equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE, verbose_name="Equipo")
-    numero_camiseta = models.TextField(max_length = 2,verbose_name="Numero de camiseta")
+    numero_camiseta = models.CharField(max_length = 2,verbose_name="Numero de camiseta")
     titular = models.BooleanField(verbose_name="Titular")
 
     def __str__(self):
@@ -69,9 +69,9 @@ class Roles(models.Model):
 class Tecnico(models.Model):
     id_tecnico = models.AutoField(primary_key=True)
     nombre_tecnico = models.CharField(max_length=50, verbose_name="Nombre tecnico")
-    apellido_tecnico = models.TextField(max_length=50,verbose_name="Apellido tecnico")
+    apellido_tecnico = models.CharField(max_length=50,verbose_name="Apellido tecnico")
     fecha_nacimiento = models.DateField(verbose_name="Fecha de nacimiento")
-    nacionalidad = models.TextField(max_length = 30,verbose_name="Nacionalidad")
+    nacionalidad = models.CharField(max_length = 30,verbose_name="Nacionalidad")
     equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE, verbose_name="Equipo")
     rol = models.ForeignKey(Roles, on_delete=models.CASCADE, verbose_name="Rol")
 

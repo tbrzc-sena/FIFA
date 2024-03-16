@@ -62,4 +62,4 @@ def dashboard_view(request):
 
 def lst_jugadores_view(request):
     jugadores = models.Jugador.objects.all()
-    return render(request, 'lst_jugadores.html', {"jugadores": jugadores})  
+    return render(request, 'lst_jugadores.html', {"jugadores": jugadores})

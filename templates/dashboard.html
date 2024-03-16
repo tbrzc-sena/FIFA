@@ -13,14 +13,12 @@
     <nav class="navbar navbar-dark bg-dark">
         <h1 class="text-white">Bienvenido {{user.username}}</h1>
         <div>
+            <a href="{% url 'lst_jugadores_view' %}" class="btn btn-primary">Lista de jugadores</a>
             <a href="{% url 'admin:index' %}" class="btn btn-primary">Admin</a>
         </div>
     </nav>
-
-    {% include 'lst_jugadores.html' %}
     {% block content %}
     {% endblock %}
-
 
     <script src="https://kit.fontawesome.com/365036b8b3.js" crossorigin="anonymous"></script>
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
